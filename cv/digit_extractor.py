@@ -6,7 +6,7 @@ class ExtractDigitsFromSudoku:
     """
     Detect and extract sudoku cells from a warped sudoku image (450x450).
     Each sudoku cell is resized to a 28x28 image
-
+    
     Steps:
     1. Use some standard image preprocessing steps (gaussian blur + adaptive thresholding)
     2. Remove the grid lines such that only digits remain in place
