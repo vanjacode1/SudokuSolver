@@ -12,6 +12,8 @@ export default function SudokuSolverPage() {
   const [status, setStatus] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const resetState = () => {
     setSolvedImage(null);
     setStatus(null);
@@ -39,7 +41,7 @@ export default function SudokuSolverPage() {
 
       // send image to backend
       const response = await axios.post(
-        "http://localhost:8000/api/sudoku-solver",
+        `${API_URL}/api/sudoku-solver`,
         formData,
         {
           headers: {
