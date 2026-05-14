@@ -6,5 +6,10 @@ dist/
 wheels/
 *.egg-info
 
-# Virtual environments
+frontend/node_modules
+frontend/dist
 .venv
+.gitignore
+
+data
+training

@@ -4,7 +4,7 @@ from model.digitnet import DigitNet
 
 def load_digitnet(weights_path) -> DigitNet:
     """
-    Load DigitNet weights and return an eval() model on the chosen device.
+    Load DigitNet weights and return an eval() model.
     """
     model = DigitNet()
     state_dict = torch.load(weights_path)
@@ -15,22 +15,26 @@ def load_digitnet(weights_path) -> DigitNet:
 
 @torch.no_grad()
 def predict_digit_with_probs(img_array, model: DigitNet):
+        """
+        Predict a Sudoku digit from a single grayscale image array
+        """
         img = img_array.astype(np.float32)
         if img.max() > 1.0:
             img = img / 255.0
 
-        x = torch.from_numpy(img).unsqueeze(0).unsqueeze(0)  # [1,1,28,28]
+        img = (img - 0.5) / 0.5
+
+        x = torch.from_numpy(img).unsqueeze(0).unsqueeze(0)  
     
         # Forward pass
-        with torch.no_grad():
-            logits = model(x)                    
-            probs = torch.softmax(logits, dim=1)  
+        logits = model(x)                    
+        probs = torch.softmax(logits, dim=1)  
     
-        probs = probs.squeeze(0).cpu()  
+        probs = probs.squeeze(0)
           
         # Interpret results
-        pred_class_index = int(torch.argmax(probs).item())  # 0 tm 8
-        pred_digit = pred_class_index + 1                   # 1 tm 9
+        pred_class_index = int(torch.argmax(probs).item())  
+        pred_digit = pred_class_index + 1                  
         confidence = float(probs[pred_class_index].item())  
     
         return pred_digit, confidence, probs
