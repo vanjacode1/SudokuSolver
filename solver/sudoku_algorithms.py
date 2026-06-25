@@ -6,10 +6,9 @@ class SudokuSolver:
     """
     Solver for 9x9 Sudoku puzzles.
 
-    Supports three approaches:
+    Supports two approaches:
     1. Backtracking for standard recursive solving.
-    2. Algorithm X / exact cover for efficient constraint-based solving.
-    3. OR-Tools CP-SAT for puzzles with uncertain cells and ranked candidate digits.
+    2. OR-Tools CP-SAT for puzzles with uncertain cells and ranked candidate digits.
     """
     def __init__(self, sudoku_board):
         self.sudoku_board = sudoku_board
