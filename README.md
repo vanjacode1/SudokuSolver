@@ -27,6 +27,8 @@ To get the most accurate result, please upload a clear photo of a Sudoku puzzle.
 - Good lighting
 - Minimal shadows
 
+Some example include: 
+
 <p align="center">
   <img src="sudoku_photos/sudoku_8.jpg" alt="Accepted Sudoku Example 1" width="220">
   <img src="sudoku_photos/sudoku_38.jpg" alt="Accepted Sudoku Example 2" width="220">
