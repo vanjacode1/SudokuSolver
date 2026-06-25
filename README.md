@@ -43,9 +43,8 @@ Some example include:
 While building this project, I improved my skills in:
 
 - Building image-based web applications
-- Handling user-uploaded images
+- Handling user uploaded images
 - Processing images for computer vision tasks
-- Detecting Sudoku grids from real-world images
 - Using OCR or digit-recognition techniques
 - Structuring logic into reusable services and components
 
