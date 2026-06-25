@@ -46,7 +46,6 @@ While building this project, I improved my skills in:
 - Handling user-uploaded images
 - Processing images for computer vision tasks
 - Detecting Sudoku grids from real-world images
-- Extracting and mapping puzzle cells to a 9x9 board
 - Using OCR or digit-recognition techniques
 - Structuring logic into reusable services and components
 
